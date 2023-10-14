@@ -1,4 +1,6 @@
-## Binary Search
+# BINARY SEARCH
+
+<code>TC : O(logN)</code>
 
 - Applicable in monotonic search space.
 - Uses a perdicate function.
