@@ -1,6 +1,6 @@
 # About
 
-Notes I made from <b>comment sections </b> and addition things I learnt through contests, Sheets.
+Notes I made from <b>comment sections </b> and additional things I learnt through contests, Sheets.
 
 ## Topics Covered
 
