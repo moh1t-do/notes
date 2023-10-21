@@ -5,10 +5,10 @@
 - Applicable in monotonic search space.
 - Uses a perdicate function.
 
-### Unoffical Hints
+### Keywords
 
 - Kth smallest.
-- subarrays, maximum of the minimum.
+- subarrays, maximize, minimize, next interval.
 
 ### Template
 
