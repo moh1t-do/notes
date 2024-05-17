@@ -1,10 +1,12 @@
 # SLIDING WINDOW
 
-This technique is used when we need to find subarrays or substrings according to a given set of conditions. Only applicable in montonic nature.
+This technique is used when we need to find **subarrays** or **substrings** according to a given set of conditions. Only applicable in **montonic nature** if possible make it.
 
 <code>TC : O(N) </code>
 
 ### Fixed Window
+
+Easy enough, initiate by **forming a window of size k** by incrementing the tail(j) and **then maintain the size** by incrementing head(i).
 
 ### Variable Window
 
@@ -52,7 +54,7 @@ When <b>asked to find minimum substring </b>, we should <code>update minimum ins
 
 1. [Find the longest substring with k unique characters in a given string](https://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/)
 
-Atmost / Atleast, `varible component is greater than or equal to fixed component. look question 2 and 3`
+Atmost / Atleast, `varaible component is greater than or equal to fixed component. look question 2 and 3`
 
 ### Note
 
@@ -69,6 +71,10 @@ If numbers may be negative, we may find better answer beyond stopped endIndex.
 ### Questions (Easy + Medium)
 
 1. [min operation removal from ends](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/)
+   **Approach**
+   `n - size of max subarray with sum (total sum - x)`
+
+###
 
 2. [Number of subarrays having sum less than K (has element >= 0)](https://www.geeksforgeeks.org/number-subarrays-sum-less-k/)
 
@@ -139,9 +145,8 @@ void atleastkDistinctChars()
 ### Questions (Hard)
 
 1. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/description/)
-
-**Approach**
-similar to nge. storing elements in a decreasing order.
+   **Approach**
+   similar to nge. storing elements in a decreasing order.
 
 ```cpp
 vector<int> maxSlidingWindow(vector<int> &nums, int k)
@@ -201,13 +206,17 @@ int shortestSubarray(vector<int> &nums, int k)
 [video link](https://www.youtube.com/watch?v=K0NgGYEAkA4)
 heap approach (TBDL)
 
-3. [Find maximum of minimum for every window size in a given array](https://www.geeksforgeeks.org/find-the-maximum-of-minimums-for-every-window-size-in-a-given-array/)
+3. [Maximum possible sum of a window in an array such that elements of same window in other array are unique](https://www.geeksforgeeks.org/maximum-possible-sum-window-array-elements-window-array-unique/)
 
-**Appraoch**
-Don't be fooled by the words. Use `next, previous smallest element` for every element in the array. Use them to calculate `max subarray length` for the given element.
+4. [Find maximum of minimum for every window size in a given array](https://www.geeksforgeeks.org/find-the-maximum-of-minimums-for-every-window-size-in-a-given-array/)
+   **Appraoch**
+   Don't be fooled by the words. Use `next, previous smallest element` for every element in the array. Use them to calculate `max subarray length` for the given element.
+   **Note**
+   This appraoach will yeild some subarray length as untouched. So update them as the max(res[i], res[i+1]) by running a loop `i=n-2; i>=0; i--`.
 
-**Note**
-This appraoach will yeild some subarray length as untouched. So update them as the max(res[i], res[i+1]) by running a loop `i=n-2; i>=0; i--`.
+###
+
+5. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/)
 
 ### References
 
