@@ -1,16 +1,18 @@
 # SLIDING WINDOW
 
+This technique is used when we need to find subarrays or substrings according to a given set of conditions. Only applicable in montonic nature.
+
 <code>TC : O(N) </code>
 
-## Fixed Window
+### Fixed Window
 
-## Variable Window
+### Variable Window
 
 - Applicable in questions relating to arrays and strings.
 - Given a <b>array/string</b> and need to find a <b>subarry/substring</b> of it which satisfy some restrictions.
 - Use a <b>hashmap assisted with two pointers.</b>
 
-## Template
+### Template
 
 ```cpp
 int findSubstring(string s){
@@ -44,24 +46,27 @@ int findSubstring(string s){
   }
 ```
 
-When <b>asked to find maximum substring</b>, we should <code>update maximum after the inner while loop</code> to guarantee that the substring is valid. Inner loop runs for falsy.
+When <b>asked to find maximum substring</b>, we should <code>update maximum after the inner while loop</code> to guarantee that the substring is valid.
 
-When <b>asked to find minimum substring </b>, we should <code>update minimum inside the inner while loop</code>. Inner loop runs for truthy.
+When <b>asked to find minimum substring </b>, we should <code>update minimum inside the inner while loop</code>.
 
-Atmost / Atmost, `varible component is greater than equal to fixed component. look question 2 and 3`
+1. [Find the longest substring with k unique characters in a given string](https://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/)
 
-## Common problems you use the sliding window pattern with:
+Atmost / Atleast, `varible component is greater than or equal to fixed component. look question 2 and 3`
+
+### Note
+
+If all the numbers are `positive`: we could use sliding window simply, because as soon as we found one index where subarray sum is greater than K, we could conclude that the subarray beyond that endIndex would also have sum greater than k.
+If numbers may be negative, we may find better answer beyond stopped endIndex.
+
+### Common problems you use the sliding window pattern with:
 
 - Maximum sum subarray of size ‘K’ (easy)
 - Longest substring with ‘K’ distinct characters (medium)
 - String anagrams (hard)
 - Atmost/Atleast pattern `(use question 2 as template)`
 
-### References
-
-1. [count subarrays](https://leetcode.com/problems/subarrays-with-k-different-integers/solutions/235235/C++Java-with-picture-prefixed-sliding-window/)
-
-### Questions
+### Questions (Easy + Medium)
 
 1. [min operation removal from ends](https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/)
 
@@ -125,6 +130,85 @@ void atleastkDistinctChars()
 }
 ```
 
-### Other Questions
+4. [Count number of substrings with exactly k distinct characters](https://www.geeksforgeeks.org/count-number-of-substrings-with-exactly-k-distinct-characters/)
+   `exactly k = atmost(k) - atmost(k-1)`
 
-1. [Subarray product less than K](https://leetcode.com/problems/subarray-product-less-than-k/description/)
+5. [balancedString](https://leetcode.com/problems/replace-the-substring-for-balanced-string/description/)
+   TBDL
+
+### Questions (Hard)
+
+1. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/description/)
+
+**Approach**
+similar to nge. storing elements in a decreasing order.
+
+```cpp
+vector<int> maxSlidingWindow(vector<int> &nums, int k)
+{
+  deque<int> dq;
+  vector<int> res;
+
+  for (int i = 0; i < nums.size(); i++)
+  {
+    if (!dq.empty() && dq.front() == i - k)
+      dq.pop_front();
+
+    // storing in the dec order so front will be the max
+    while (!dq.empty() && nums[dq.back()] <= nums[i])
+      dq.pop_back();
+    dq.push_back(i);
+
+    if (i >= k - 1)
+      res.push_back(nums[dq.front()]);
+  }
+  return res;
+}
+
+```
+
+2. [Shortest Subarray with sum at least K](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/description/)
+
+```cpp
+int shortestSubarray(vector<int> &nums, int k)
+{
+  int n = nums.size();
+  deque<pair<ll, ll>> dq;
+  ll sum = 0, res = 1e9;
+  for (ll i = 0; i < n; i++)
+  {
+    sum += nums[i];
+    if (sum >= k)
+      res = min(res, i + 1);
+
+    // to maintain a montonic behaviour
+    while (!dq.empty() && dq.back().first >= sum)
+      dq.pop_back();
+
+    // shrink the window
+    while (!dq.empty() && sum - dq.front().first >= k)
+    {
+      res = min(res, i - dq.front().second);
+      dq.pop_front();
+    }
+    dq.push_back({sum, i});
+  }
+
+  return res == 1e9 ? -1 : res;
+}
+```
+
+[video link](https://www.youtube.com/watch?v=K0NgGYEAkA4)
+heap approach (TBDL)
+
+3. [Find maximum of minimum for every window size in a given array](https://www.geeksforgeeks.org/find-the-maximum-of-minimums-for-every-window-size-in-a-given-array/)
+
+**Appraoch**
+Don't be fooled by the words. Use `next, previous smallest element` for every element in the array. Use them to calculate `max subarray length` for the given element.
+
+**Note**
+This appraoach will yeild some subarray length as untouched. So update them as the max(res[i], res[i+1]) by running a loop `i=n-2; i>=0; i--`.
+
+### References
+
+1. [LC Article 1](https://leetcode.com/problems/subarrays-with-k-different-integers/solutions/235235/C++Java-with-picture-prefixed-sliding-window/)
