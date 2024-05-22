@@ -1,6 +1,6 @@
 # About
 
-Notes I made from <b>comment sections </b> and additional things I learnt through contests and sheets.
+Notes I made from **comment sections** and additional things I learnt through **contests** and **sheets.**
 
 ## Topics Covered
 
@@ -27,3 +27,5 @@ Notes I made from <b>comment sections </b> and additional things I learnt throug
 21. ~~Maths~~
 22. ~~Segemet Tree~~
 23. [Competitive Programing tips and tricks](/somecpp.md)
+
+![Rock lee](https://i.pinimg.com/originals/f6/04/78/f60478a4ab6b9db61fea43ff9467e0f3.jpg)
