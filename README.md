@@ -28,5 +28,5 @@ Notes I made from **comment sections** and additional things I learnt through **
 22. ~~Segemet Tree~~
 23. [Competitive Programing tips and tricks](/cpTipsAndTricks.md)
 
-## Disc
+## Hard Work
 ![Rock lee](https://i.pinimg.com/originals/f6/04/78/f60478a4ab6b9db61fea43ff9467e0f3.jpg)
