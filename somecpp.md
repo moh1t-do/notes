@@ -20,3 +20,16 @@ for (auto &el : str)
 }
 cout << res << endl;
 ```
+
+2. Space efficient method to generate top, down, left, right directions
+
+```cpp
+int x, y;
+x = 1, y = 1;
+vector<int> dir{1, 0, -1, 0, 1};
+for (int i = 0; i < 4; i++)
+{
+  int nx = x + dir[i],
+      ny = y = dir[i + 1];
+}
+```
