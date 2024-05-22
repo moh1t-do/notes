@@ -31,4 +31,30 @@ def binary_search(array) -> int:
 2. Decide return value. Is it return <code>left</code> or return <code>left - 1 </code>? Remember this: <b>after exiting the while loop,</b> <code>left</code><b> is the minimal k​ satisfying the predicate function;</b>
 3. Design the predicate function. This is the most difficult and most beautiful part. Needs lots of practice.
 
-[reference](https://leetcode.com/discuss/study-guide/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems)
+### Questions
+
+1. [Find a number in a sorted array](https://leetcode.com/problems/binary-search/description/)
+
+```cpp
+int search(vector<int> &nums, int target)
+{
+  int l, h;
+  l = 0;
+  h = nums.size() - 1;
+  while (h >= l)
+  {
+    int m = (h + l) / 2;
+    if (nums[m] == target)
+      return m;
+    if (nums[m] < target)
+      l = m + 1;
+    else
+      h = m - 1;
+  }
+  return -1;
+}
+```
+
+### References
+
+1. [LC article 1](https://leetcode.com/discuss/study-guide/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems)
