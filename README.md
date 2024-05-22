@@ -18,7 +18,7 @@ Notes I made from <b>comment sections </b> and additional things I learnt throug
 12. ~~Greedy~~
 13. [Stack and Queue](/stack.md)
 14. ~~Recursion~~
-15. ~~Binary Tree~~
+15. [Binary Tree](/binaryTree.md)
 16. ~~Binary Search Tree~~
 17. [Dyanmic Programing](/dynamicProgramming.md)
 18. ~~Graph~~
