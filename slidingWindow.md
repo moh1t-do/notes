@@ -203,18 +203,15 @@ int shortestSubarray(vector<int> &nums, int k)
 }
 ```
 
-[video link](https://www.youtube.com/watch?v=K0NgGYEAkA4)
+[![Watch the video](https://img.youtube.com/vi/K0NgGYEAkA4/maxresdefault.jpg)](https://www.youtube.com/watch?v=K0NgGYEAkA4)
 heap approach (TBDL)
 
 3. [Maximum possible sum of a window in an array such that elements of same window in other array are unique](https://www.geeksforgeeks.org/maximum-possible-sum-window-array-elements-window-array-unique/)
 
 4. [Find maximum of minimum for every window size in a given array](https://www.geeksforgeeks.org/find-the-maximum-of-minimums-for-every-window-size-in-a-given-array/)
-   **Appraoch**
-   Don't be fooled by the words. Use `next, previous smallest element` for every element in the array. Use them to calculate `max subarray length` for the given element.
-   **Note**
-   This appraoach will yeild some subarray length as untouched. So update them as the max(res[i], res[i+1]) by running a loop `i=n-2; i>=0; i--`.
-
-###
+ <p><b>Approach </b>Don't be fooled by the words. Use `next, previous smallest element` for every element in the array. Use them to calculate `max subarray length` for the given element. <br/>
+<b>Note</b>
+This appraoach will yeild some subarray length as untouched. So update them as the max(res[i], res[i+1]) by running a loop <code>i=n-2; i>=0; i--</code>.</p>
 
 5. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/)
 
