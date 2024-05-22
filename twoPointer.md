@@ -110,7 +110,6 @@ for (int i = 0; i < n; i++)
    **Approach**
    Take two pointer one from start other from end. If their sum is less than equal to x. The arr[i] will form pairs with all elements in range i+1 to j. `Update result` to `result += (j - i)` and increment i else decrement j.
 
-
 ### Other questions
 
 1. [Number of subarrays having sum exactly equal to k](https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/)
