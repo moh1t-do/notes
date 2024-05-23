@@ -21,7 +21,7 @@ Notes I made from **comment sections** and additional things I learnt through **
 15. [Binary Tree](/binaryTree.md)
 16. ~~Binary Search Tree~~
 17. [Dyanmic Programing](/dynamicProgramming.md)
-18. ~~Graph~~
+18. [Graph](/graph.md)
 19. ~~Trie~~
 20. [Bit Manipulation](/bitmanipulation.md)
 21. ~~Maths~~
