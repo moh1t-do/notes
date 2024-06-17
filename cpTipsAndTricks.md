@@ -33,3 +33,11 @@ for (int i = 0; i < 4; i++)
       ny = y = dir[i + 1];
 }
 ```
+
+3. sqrt is not precise
+
+```cpp
+int x = sqrt(y);
+cout << x*x == y << endl;
+// use the above addition case
+```
