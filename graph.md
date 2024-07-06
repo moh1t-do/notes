@@ -186,37 +186,83 @@ class Solution
 class Solution
 {
 	public:
-	//Function to return list containing vertices in Topological order. 
+	//Function to return list containing vertices in Topological order.
 	void dfs(int u, vector<int> adj[], vector<int> &vis, stack<int> &st)
 	{
 	    vis[u] = 1;
 	    for(auto &v: adj[u])
 	    if (!vis[v])
 	    dfs(v, adj, vis, st);
-	    
+
 	    st.push(u);
 	}
-	
-	vector<int> topoSort(int V, vector<int> adj[]) 
+
+	vector<int> topoSort(int V, vector<int> adj[])
 	{
 	    // code here
 	    stack<int> st;
 	    vector<int> vis(V, 0);
-	    
+
 	    for(int i=0; i<V; i++)
 	    {
 	        if (!vis[i])
 	        dfs(i, adj, vis, st);
 	    }
-	    
+
 	    vector<int> res;
 	    while(!st.empty())
 	    {
 	        res.push_back(st.top());
 	        st.pop();
 	    }
-	    
+
 	    return res;
 	}
+};
+```
+
+### Shortest path algorithm
+
+1. Dijkstra Algorithm
+
+   <p><b>Note : </b>Single-source shortest path problems having non-negative edge weight in the graphs.</p>
+
+```cpp
+class Solution
+{
+	public:
+	//Function to find the shortest distance of all the vertices
+    //from the source vertex S.
+    vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
+    {
+        // Code here
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+        vector<int> dis(V,1e9);
+
+        pq.push({S,0});
+        dis[S] = 0;
+
+        while(!pq.empty())
+        {
+            auto p = pq.top();
+            pq.pop();
+            int u = p.first;
+            int d = p.second;
+
+            for(auto &ver: adj[u])
+            {
+                int v = ver[0];
+                if (d+ver[1] < dis[v])
+                {
+                    dis[v] = d+ver[1];
+                    pq.push({v, d+ver[1]});
+                }
+
+            }
+        }
+
+        for(auto &i: dis) if (i == 1e9) i = -1;
+        return dis;
+    }
 };
 ```

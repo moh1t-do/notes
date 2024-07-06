@@ -7,7 +7,7 @@
 
 ### Keywords
 
-- Kth smallest.
+- Kth smallest in a multiplication table.
 - subarrays, maximize, minimize, next interval.
 
 ### Template
