@@ -4,7 +4,7 @@ Notes I made from **comment sections** and additional things I learnt through **
 
 ## Topics Covered
 
-1. ~~Hashing~~
+1. [Hashing](/hashing.md)
 2. [Two Pointer](/twoPointer.md)
 3. [Sliding Window](/slidingWindow.md)
 4. ~~Implementation~~
