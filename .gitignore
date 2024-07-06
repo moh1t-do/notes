@@ -2,7 +2,7 @@
 node_modules/
 
 # Ignore the template
-template/
+template/.cph
 
 # Ignore Logs
 logs
