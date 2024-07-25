@@ -28,8 +28,8 @@ def binary_search(array) -> int:
 ```
 
 1. Correctly initialize the boundary variables <code>left</code> and <code>right</code> to specify search space. Only one rule: set up the boundary to <b>include all possible elements;</b>
-2. Decide return value. Is it return <code>left</code> or return <code>left - 1 </code>? Remember this: <b>after exiting the while loop,</b> <code>left</code><b> is the minimal k​ satisfying the predicate function;</b>
-3. Design the predicate function. This is the most difficult and most beautiful part. Needs lots of practice.
+2. Design the predicate function. This is the most difficult and most beautiful part. Needs lots of practice.
+3. Adjust shrink the search space according to <code>TTTTFFF</code> or <code>FFFFTTT</code>
 
 ### Questions
 
