@@ -215,6 +215,38 @@ This appraoach will yeild some subarray length as untouched. So update them as t
 
 5. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/description/)
 
+6. [Length of the longest subarry with atmost k frequency](https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/)
+  ```cpp
+  class Solution {
+public:
+    int maxSubarrayLength(vector<int>& nums, int k) {
+        int i, j, n, res;
+        n = nums.size();
+        i = j = res = 0;
+        unordered_map<int,int> ump;
+        while(j<n)
+        {
+            ump[nums[j]]++;
+            if (ump[nums[j]] > k)
+            {
+                while(nums[i] != nums[j])
+                {
+                    ump[nums[i]]--;
+                    i++;
+                }
+                ump[nums[i]]--;
+                i++;
+            }
+            res = max(res, j-i+1);
+            j++;
+        }
+
+        return res;
+    }
+};
+  ```
+
+
 ### References
 
 1. [LC Article 1](https://leetcode.com/problems/subarrays-with-k-different-integers/solutions/235235/C++Java-with-picture-prefixed-sliding-window/)

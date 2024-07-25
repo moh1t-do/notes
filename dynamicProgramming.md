@@ -21,6 +21,9 @@ Optimised recursion through memoization
 1. [LC article 1](https://leetcode.com/discuss/study-guide/458695/Dynamic-Programming-Patterns)
 2. [Quora discussion](https://www.quora.com/Are-there-any-good-resources-or-tutorials-for-dynamic-programming-DP-besides-the-TopCoder-tutorial)
 
+### Caution 
+- Take note if the ans require eg. <code>no of partition or no of ways of partition </code> both have different meaning.
+
 ### Questions
 
 ### Simple Pattern
