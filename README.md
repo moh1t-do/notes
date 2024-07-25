@@ -1,6 +1,6 @@
 # About
 
-Notes I made from **comment sections** and additional things I learnt through **contests** and **sheets.**
+Why notes?
 
 ## Topics Covered
 
