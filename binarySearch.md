@@ -55,6 +55,11 @@ int search(vector<int> &nums, int target)
 }
 ```
 
+2. [Minimize The Maximum Difference Of Pairs](https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/description/)
+
+3. [Amazon OA]()
+  Binary Search on window length
+
 ### References
 
 1. [LC article 1](https://leetcode.com/discuss/study-guide/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems)
