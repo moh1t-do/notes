@@ -10,22 +10,6 @@
 - Kth smallest in a multiplication table.
 - subarrays, maximize, minimize, next interval.
 
-### Template
-
-```python
-def binary_search(array) -> int:
-    def condition(value) -> bool:
-        pass
-
-    left, right = min(search_space), max(search_space) # could be [0, n], [1, n] etc. Depends on problem
-    while left < right:
-        mid = left + (right - left) // 2
-        if condition(mid):
-            right = mid
-        else:
-            left = mid + 1
-    return left
-```
 
 1. Correctly initialize the boundary variables <code>left</code> and <code>right</code> to specify search space. Only one rule: set up the boundary to <b>include all possible elements;</b>
 2. Design the predicate function. This is the most difficult and most beautiful part. Needs lots of practice.
@@ -63,3 +47,5 @@ int search(vector<int> &nums, int target)
 ### References
 
 1. [LC article 1](https://leetcode.com/discuss/study-guide/786126/Python-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems)
+
+<!-- 30 sessions done -->
